@@ -1,16 +1,14 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const AuthContext  = createContext()
-
-
-
+  const [userData,setUserData] = useState(null)
 
 function AuthProvider({children}) {
   return (
     <div>
-         <AuthProvider.Provider value={"Ajay"}>
+         <AuthContext.Provider value={"Ajay"}>
                {children}
-         </AuthProvider.Provider>
+         </AuthContext.Provider>
     </div>
   )
 }
