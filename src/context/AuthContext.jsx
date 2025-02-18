@@ -1,9 +1,9 @@
 import React from 'react'
 
-function AuthContext() {
+function AuthContext({children}) {
   return (
     <div>
-        
+         {children}
     </div>
   )
 }
