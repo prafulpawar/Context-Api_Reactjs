@@ -6,9 +6,11 @@ import Alltask from '../Other/Alltask'
 function AdminDashboard() {
   return (
     <div className='h-screen w-full p-7 '>
-      <Header />
+      
+       <Header />
        <CreateTask/>
        <Alltask/>
+
     </div>
   )
 }
