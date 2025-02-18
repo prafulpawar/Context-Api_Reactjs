@@ -5,7 +5,11 @@ function Login() {
         const [password,setPassword] = useState("");
   
        const submitHandler = (e)=>{
+            console.log('hello')
             e.preventDefault()
+
+            setEmail("");
+            setPassword("")
        }
    
 
