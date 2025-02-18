@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { AuthContext } from '../../context/AuthProvider';
 
 function Login({handleLogin}) {
         const [email,setEmail] = useState("")
@@ -10,7 +11,11 @@ function Login({handleLogin}) {
             setEmail("");
             setPassword("")
        }
-   
+
+
+    const data = useContext(AuthContext);
+    console.log(data)
+
 
   return (
     <div className='flex h-screen w-screen items-center justify-center '>
