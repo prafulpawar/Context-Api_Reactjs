@@ -48,6 +48,7 @@ const admin = [
 ]
 
 export const  setLocalStorage = () =>{
+  console.log("Setting localStorage with employees and admin...");
       localStorage.setItem('employees',JSON.stringify(employees));
       localStorage.setItem('admin',JSON.stringify(admin))
 }

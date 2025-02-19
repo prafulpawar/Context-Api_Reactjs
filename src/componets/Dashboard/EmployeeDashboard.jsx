@@ -4,19 +4,19 @@ import TaskListNumber from '../Other/TaskListNumber'
 import TaskList from '../TaskList/TaskList'
 
 function EmployeeDashboard({data}) {
-  console.log(data)
+ 
   return (
-    <div>
+   
       
             <div className='p-10 bg-[#1C1C1C] h-screen'>
-                 <Header/>
-                 <TaskListNumber/>
-                 <TaskList/>
+            
+                 <Header data = {data}/>
+                 <TaskListNumber data = {data} />
+                 <TaskList data = {data} />
 
                  
             </div>
 
-    </div>
   )
 }
 
