@@ -11,7 +11,7 @@ function AuthProvider({children}) {
        setUserData({employees,admin})
   },[])
 
-  console.log(data.employees)
+
 
   return (
     <div>

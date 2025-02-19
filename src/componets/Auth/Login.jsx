@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import { AuthContext } from '../../context/AuthProvider';
 
 function Login({handleLogin}) {
 
@@ -15,9 +14,7 @@ function Login({handleLogin}) {
         }
 
 
-    const data = useContext(AuthContext);
-    console.log(data)
-
+  
 
   return (
     <div className='flex h-screen w-screen items-center justify-center '>
