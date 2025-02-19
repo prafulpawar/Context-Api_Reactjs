@@ -21,6 +21,12 @@ function NewTask() {
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe impedit nostrum consequuntur nam corporis facilis.
 
         </p>
+
+        <div className='flex justify-between mt-4 '>
+               <button className='bg-green-500 py-1 px-2 text-sm'> Mark As Completed</button>
+               <button className='bg-red-500 py-1 px-2 text-sm'>Mark as Failed</button>
+         </div>
+         
       </div>
     </div>
   )

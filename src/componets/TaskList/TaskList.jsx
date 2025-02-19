@@ -1,5 +1,9 @@
 import React from 'react'
 import AcceptTask from './AcceptTask'
+import CompleteTask from './CompleteTask'
+import FailedTask from './FailedTask'
+import NewTask from './NewTask'
+
 
 function TaskList() {
     return (
