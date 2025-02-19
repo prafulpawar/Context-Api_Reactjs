@@ -23,11 +23,15 @@ function App() {
      //          }
      //      }
      //  }, [authData]);  
+
           useEffect(()=>{
                const loggedInUser = localStorage.getItem('loggedInUser');
                
                if(loggedInUser){
-                    console.log("User LoggedIn Hai")
+                   const userData = JSON.parse(loggedInUser);
+                   setUser(userData.role);
+                   setLoggedInUserData(employee)
+                   console.log(userData)
                }
           })
      
@@ -52,7 +56,7 @@ function App() {
                   
                     setUser({ role: 'employee' })
                     setLoggedInUserData(employee)
-                    localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee' }))
+                    localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee' ,data:employee }))
                     console.log("saved in localstorager",localStorage.getItem("loggedInUser"))
                   
                }
