@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CreateTask() {
+function CreateTask({data}) {
   return (
     <div className='p-5 bg-[#1c1c1c] mt-7 rounded'>
     <form action='' className=' flex flex-wrap w-full items-start justify-between  '>

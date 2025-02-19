@@ -1,41 +1,139 @@
-const employees =[
-  
-    {
-      "id": 1, "email": "employee1@example.com", "password": "123",
-      "tasks": [
-        {"title": "Task 1", "description": "Complete report", "date": "2025-02-18", "category": "Documentation", "active": true, "new": true, "completed": false, "failed": false},
-        {"title": "Task 2", "description": "Fix bug in module", "date": "2025-02-19", "category": "Development", "active": false, "new": false, "completed": true, "failed": false}
-      ]
+const employees = [
+  {
+    "id": 1,
+    "firstName": "John",
+    "email": "e@e.com",
+    "password": "123",
+    "taskCounts": {
+      "activeTasks": 2,
+      "newTasks": 2,
+      "completedTasks": 1,
+      "failedTasks": 0
     },
-    {
-      "id": 2, "email": "employee2@example.com", "password": "123",
-      "tasks": [
-        {"title": "Task 1", "description": "Review PRs", "date": "2025-02-18", "category": "Code Review", "active": true, "new": true, "completed": false, "failed": false},
-        {"title": "Task 2", "description": "Write documentation", "date": "2025-02-20", "category": "Documentation", "active": false, "new": false, "completed": true, "failed": false}
-      ]
+    "tasks": [
+      {
+        "title": "Task 1",
+        "description": "Complete report",
+        "date": "2025-02-18",
+        "category": "Documentation",
+        "active": true,
+        "new": true,
+        "completed": false,
+        "failed": false
+      },
+      {
+        "title": "Task 2",
+        "description": "Fix bug in module",
+        "date": "2025-02-19",
+        "category": "Development",
+        "active": false,
+        "new": false,
+        "completed": true,
+        "failed": false
+      },
+      {
+        "title": "Task 3",
+        "description": "Prepare slides for meeting",
+        "date": "2025-02-20",
+        "category": "Presentation",
+        "active": true,
+        "new": true,
+        "completed": false,
+        "failed": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "firstName": "Emily",
+    "email": "employee2@example.com",
+    "password": "123",
+    "taskCounts": {
+      "activeTasks": 2,
+      "newTasks": 2,
+      "completedTasks": 1,
+      "failedTasks": 0
     },
-    {
-      "id": 3, "email": "employee3@example.com", "password": "123",
-      "tasks": [
-        {"title": "Task 1", "description": "Set up CI/CD", "date": "2025-02-18", "category": "DevOps", "active": true, "new": true, "completed": false, "failed": false},
-        {"title": "Task 2", "description": "Optimize database", "date": "2025-02-22", "category": "Database", "active": false, "new": false, "completed": false, "failed": true}
-      ]
+    "tasks": [
+      {
+        "title": "Task 1",
+        "description": "Review PRs",
+        "date": "2025-02-18",
+        "category": "Code Review",
+        "active": true,
+        "new": true,
+        "completed": false,
+        "failed": false
+      },
+      {
+        "title": "Task 2",
+        "description": "Write documentation",
+        "date": "2025-02-20",
+        "category": "Documentation",
+        "active": false,
+        "new": false,
+        "completed": true,
+        "failed": false
+      },
+      {
+        "title": "Task 3",
+        "description": "Optimize codebase",
+        "date": "2025-02-22",
+        "category": "Development",
+        "active": true,
+        "new": true,
+        "completed": false,
+        "failed": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "firstName": "Michael",
+    "email": "employee3@example.com",
+    "password": "123",
+    "taskCounts": {
+      "activeTasks": 2,
+      "newTasks": 2,
+      "completedTasks": 0,
+      "failedTasks": 1
     },
-    {
-      "id": 4, "email": "employee4@example.com", "password": "123",
-      "tasks": [
-        {"title": "Task 1", "description": "Design new UI", "date": "2025-02-18", "category": "UI/UX", "active": true, "new": true, "completed": false, "failed": false},
-        {"title": "Task 2", "description": "Conduct user testing", "date": "2025-02-21", "category": "Research", "active": false, "new": false, "completed": true, "failed": false}
-      ]
-    },
-    {
-      "id": 5, "email": "employee5@example.com", "password": "123",
-      "tasks": [
-        {"title": "Task 1", "description": "Develop API endpoints", "date": "2025-02-18", "category": "Backend", "active": true, "new": true, "completed": false, "failed": false},
-        {"title": "Task 2", "description": "Write unit tests", "date": "2025-02-23", "category": "Testing", "active": false, "new": false, "completed": true, "failed": false}
-      ]
-    }
-  ]
+    "tasks": [
+      {
+        "title": "Task 1",
+        "description": "Set up CI/CD",
+        "date": "2025-02-18",
+        "category": "DevOps",
+        "active": true,
+        "new": true,
+        "completed": false,
+        "failed": false
+      },
+      {
+        "title": "Task 2",
+        "description": "Optimize database",
+        "date": "2025-02-22",
+        "category": "Database",
+        "active": false,
+        "new": false,
+        "completed": false,
+        "failed": true
+      },
+      {
+        "title": "Task 3",
+        "description": "Implement logging system",
+        "date": "2025-02-25",
+        "category": "Infrastructure",
+        "active": true,
+        "new": true,
+        "completed": false,
+        "failed": false
+      }
+    ]
+  }
+];
+
+
 
 const admin = [
     {
