@@ -12,19 +12,18 @@ function App() {
 
 
      const authData = useContext(AuthContext)
-     // console.log(authData)
-     // console.log(authData?.employees);
 
 
-     //    useEffect(()=>{
-     //      if(authData){
-     //         const loggedInUser  = localStorage.getItem("loggedInUser")
-     //           if(loggedInUser){
-     //                 setUser(loggedInUser.role);
-     //           }
 
-     //      }
-     //  },[authData])
+        useEffect(()=>{
+          if(authData){
+             const loggedInUser  = localStorage.getItem("loggedInUser")
+               if(loggedInUser){
+                     setUser(loggedInUser.role);
+               }
+
+          }
+      },[authData])
 
      // console.log(user)
 
@@ -39,7 +38,7 @@ function App() {
                if (employee) {
                     setUser({ role: 'emaployee' })
                     setLoggedInUserData(employee)
-                    localStorage.setItem('loggedInUser', JSON.stringify({ role: 'emaployee' }))
+                    localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee' }))
                }
 
           }
@@ -56,7 +55,7 @@ function App() {
               {
                 user == 'admin' ? <AdminDashboard/> : (user == 'employee' ? <EmployeeDashboard data={loggedInUserData}/> :null )
               }
-              
+
           </div>
      )
 }
