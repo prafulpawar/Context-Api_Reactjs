@@ -49,7 +49,7 @@ function App() {
                const employee = authData.employees.find((e) => email == e.email && e.password == password)
                
                if (employee) {
-                    console.log(employee)
+                  
                     setUser({ role: 'employee' })
                     setLoggedInUserData(employee)
                     localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee' }))

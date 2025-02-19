@@ -6,26 +6,25 @@ import NewTask from './NewTask'
 
 
 function TaskList({data}) {
-    console.log(data.tasks)
     return (
         <div id='tasklist' className='h-[55%] pl-20 overflow-x-auto w-full mt-10 flex items-center justify-start gap-5 flex-nowrap'>
         
         
           
           {
-            data.tasks.map((elem)=>{
+            data.tasks.map((elem,index)=>{
                 if(elem.active){
-                    return <AcceptTask/>
+                    return <AcceptTask key={index}/>
                 }  
                  if(elem.completed){
-                    return <CompleteTask/>
+                    return <CompleteTask key={index} />
                 }
 
                  if(elem.new){
-                    return <NewTask/>
+                    return <NewTask key={index}/>
                 }
                 if(elem.failed){
-                    return <failedTasks/>
+                    return <failedTasks key={index}/>
                 }
             })
           }
