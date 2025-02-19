@@ -23,10 +23,9 @@ function NewTask() {
         </p>
 
         <div className='flex justify-between mt-4 '>
-               <button className='bg-green-500 py-1 px-2 text-sm'> Mark As Completed</button>
-               <button className='bg-red-500 py-1 px-2 text-sm'>Mark as Failed</button>
+               <button className='bg-green-500 py-1 px-2 text-sm'> Accept Task </button>
          </div>
-         
+
       </div>
     </div>
   )

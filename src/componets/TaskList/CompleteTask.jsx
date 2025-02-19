@@ -22,9 +22,9 @@ function CompleteTask() {
 
         </p>
 
-        <div className='flex justify-between mt-4 '>
-               <button className='bg-green-500 py-1 px-2 text-sm'> Mark As Completed</button>
-               <button className='bg-red-500 py-1 px-2 text-sm'>Mark as Failed</button>
+        <div className='flex justify-between mt-2 '>
+               <button className='w-full'>  Completed</button>
+               
          </div>
 
       </div>
