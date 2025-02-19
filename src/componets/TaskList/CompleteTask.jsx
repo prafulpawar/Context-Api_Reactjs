@@ -23,7 +23,7 @@ function CompleteTask() {
         </p>
 
         <div className='flex justify-between mt-2 '>
-               <button className='w-full'>  Completed</button>
+               <button className='w-full bg-red-500 py-1 px-2 text-sm'>  Completed</button>
                
          </div>
 
