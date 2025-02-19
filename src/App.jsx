@@ -23,7 +23,13 @@ function App() {
      //          }
      //      }
      //  }, [authData]);  
-      
+          useEffect(()=>{
+               const loggedInUser = localStorage.getItem('loggedInUser');
+               
+               if(loggedInUser){
+                    console.log("User LoggedIn Hai")
+               }
+          })
      
 
 
