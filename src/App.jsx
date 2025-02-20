@@ -8,32 +8,20 @@ import { AuthContext } from './context/AuthProvider'
 
 function App() {
      const [user, setUser] = useState("");
-     const [loggedInUserData, setLoggedInUserData] = useState("");
-
+     const [loggedInUserData, setLoggedInUserData] = useState(""); 
      const authData = useContext(AuthContext)
-      
 
-     // useEffect(() => {
-     //      if (authData && authData.employees) {
-     //          const storedUser = JSON.parse(localStorage.getItem('loggedInUser') || 'null');
-     //          if (storedUser) {
-     //              setUser(storedUser);
-     //              const loggedEmployee = authData.employees.find(e => e.email === storedUser.email);
-     //              if (loggedEmployee) setLoggedInUserData(loggedEmployee);
-     //          }
-     //      }
-     //  }, [authData]);  
 
-          useEffect(()=>{
-               const loggedInUser = localStorage.getItem('loggedInUser');
+          // useEffect(()=>{
+          //      const loggedInUser = localStorage.getItem('loggedInUser');
                
-               if(loggedInUser){
-                   const userData = JSON.parse(loggedInUser);
-                   setUser(userData.role);
-                   setLoggedInUserData(employee)
-                   console.log(userData)
-               }
-          })
+          //      if(loggedInUser){
+          //          const userData = JSON.parse(loggedInUser);
+          //          setUser(userData.role);
+          //       setLoggedInUserData(userData.data)
+                  
+          //      }
+          // },[])
      
 
 
@@ -77,11 +65,16 @@ function App() {
 
      return (
           <div className='' >
-               {!user ? <Login handleLogin={handleLogin} /> : ''}
+               {!user ? <Login handleLogin={handleLogin} /> : ' '}
 
               {
-                user == 'admin' ? <AdminDashboard/> : (user?.role == 'employee' ? <EmployeeDashboard data={loggedInUserData}/> :"" )
+               
+                user.role == 'admin' ? <AdminDashboard/> : (user?.role == 'employee' ? <EmployeeDashboard data={loggedInUserData}/> :"" )
               }
+              {
+                console.log(user)
+              }
+              
 
           </div>
      )

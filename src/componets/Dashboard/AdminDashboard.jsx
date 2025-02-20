@@ -4,6 +4,7 @@ import CreateTask from '../Other/CreateTask'
 import Alltask from '../Other/Alltask'
 
 function AdminDashboard() {
+  console.log("hello")
   return (
     <div className='h-screen w-full p-7 '>
       
