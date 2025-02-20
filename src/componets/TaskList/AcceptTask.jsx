@@ -1,6 +1,10 @@
 import React from 'react'
 
-function AcceptTask() {
+function AcceptTask({data}) {
+  
+  console.log(data);
+
+
   return (
     <div>
       <div className=' flex-shrink-0 h-full w-[300px] bg-red-400 rounded-xl p-5  '>
