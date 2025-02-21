@@ -10,7 +10,7 @@ function EmployeeDashboard(props) {
       
             <div className='p-10 bg-[#1C1C1C] h-screen'>
             
-                 <Header data = {props.data}/>
+                 <Header data changeUser = {props.data}/>
                  <TaskListNumber data = {props.data} />
                  <TaskList data = {props.data} />
 
