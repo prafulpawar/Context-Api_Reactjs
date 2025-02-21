@@ -3,15 +3,7 @@ import { setLocalStorage } from '../../utils/localstorage'
 
 function Header(props) {
    console.log(props)
-    //  const [username,setUsername] = useState=('')
-
-    //  if(!data){
-    //   setUsername('Admin')
-    //  }
-    //  else{
-    //   setUsername(data.firstName)
-    //  }
-
+  
     const logoutUser = () =>{
         localStorage.setItem("loggedInUser",' ')
         props.changeUser(" ")
@@ -28,3 +20,4 @@ function Header(props) {
 }
 
 export default Header
+
