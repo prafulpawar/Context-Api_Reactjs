@@ -17,9 +17,9 @@ function Alltask({data}) {
                </div>
         <div className='h-[80%] overflow-auto'>
         {
-          authData.employees.map((elem)=>{
+          authData.employees.map((elem,index)=>{
             return (
-               <div className=' border-2  py-2 mb-2 px-4 flex justify-between rounded'>
+               <div key={index} className='  border-2  py-2 mb-2 px-4 flex justify-between rounded'>
                <h2 className='w-1/5 text-center ' >{elem.firstName} </h2>
                <h3 className='w-1/5 text-center'>{elem.taskCounts.taskCounts }</h3>
                <h5 className='w-1/5 text-center'>{elem.taskCounts.newTasks }</h5>
