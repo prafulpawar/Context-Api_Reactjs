@@ -13,7 +13,7 @@ function Header({data}) {
 
     const logoutUser = () =>{
         localStorage.setItem("loggedInUser",' ')
-        window.location.reload()
+        // window.location.reload()
     }
   return (
     <div className='flex items-end justify-between'>
