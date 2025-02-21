@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { setLocalStorage } from '../../utils/localstorage'
 
 function Header(props) {
+   console.log(props)
     //  const [username,setUsername] = useState=('')
 
     //  if(!data){

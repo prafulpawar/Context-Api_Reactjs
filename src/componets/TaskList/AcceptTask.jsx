@@ -2,7 +2,7 @@ import React from 'react'
 
 function AcceptTask({data}) {
 
-  console.log(data);
+ 
 
   return (
     <div>

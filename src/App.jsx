@@ -71,9 +71,7 @@ function App() {
                
                 user.role == 'admin' ? <AdminDashboard  changeUser={setUser} /> : (user?.role == 'employee' ? <EmployeeDashboard  changeUser={setUser} data={loggedInUserData}/> :"" )
               }
-              {
-                console.log(user)
-              }
+          
               
 
           </div>
