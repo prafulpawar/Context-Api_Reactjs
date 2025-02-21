@@ -19,20 +19,17 @@ function Alltask({data}) {
         {
           authData.employees.map((elem)=>{
             return (
-               <div className='bg-green-700 py-2 mb-2 px-4 flex justify-between rounded'>
+               <div className=' border-2  py-2 mb-2 px-4 flex justify-between rounded'>
                <h2 className='w-1/5 text-center ' >{elem.firstName} </h2>
-               <h3 className='w-1/5 text-center'>Task</h3>
-               <h5 className='w-1/5 text-center'>Status</h5>
-               <h5 className='w-1/5 text-center'>Status</h5>
-               <h5 className='w-1/5 text-center'>Failed</h5>
+               <h3 className='w-1/5 text-center'>{elem.taskCounts.taskCounts }</h3>
+               <h5 className='w-1/5 text-center'>{elem.taskCounts.newTasks }</h5>
+               <h5 className='w-1/5 text-center'>{elem.taskCounts.completedTasks }</h5>
+               <h5 className='w-1/5 text-center'>{elem.taskCounts.failedTasks }</h5>
                </div>
             )
           })
         }
         </div>
-
-
-
 
     </div>
   )
