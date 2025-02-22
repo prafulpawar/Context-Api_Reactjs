@@ -29,9 +29,8 @@ function CreateTask({ data }) {
 
   
    
-    const data = userData.employees
-    console.log(data)
-
+    const data = userData
+   
     data.forEach((elem) => {
       if (asignTo === elem.firstName) {
         elem.tasks.push(newTask);
@@ -40,6 +39,8 @@ function CreateTask({ data }) {
     });
 
     setUserData(data)
+     console.log(data)
+
   
     // Reset form fields properly
     setAsignTo("");

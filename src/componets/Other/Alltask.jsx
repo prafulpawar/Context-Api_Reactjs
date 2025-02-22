@@ -17,7 +17,7 @@ function Alltask({data}) {
                </div>
         <div className='h-[80%] overflow-auto'>
         {
-          userData.employees.map((elem,index)=>{
+          userData.map((elem,index)=>{
             return (
                <div key={index} className='  border-2  py-2 mb-2 px-4 flex justify-between rounded'>
                <h2 className='w-1/5 text-center ' >{elem.firstName} </h2>
