@@ -4,8 +4,8 @@ import { AuthContext } from '../../context/AuthProvider'
 
 
 function Alltask({data}) {
-   const authData =   useContext(AuthContext)
-    console.log(authData.employees)
+   const [userData,setUserData] =   useContext(AuthContext)
+   
   return (
     <div className='bg-[#1c1c1c] p-5 mt-5 rounded   '>
       <div className='bg--400 py-2 mb-2 px-4 flex justify-between rounded'>
@@ -17,7 +17,7 @@ function Alltask({data}) {
                </div>
         <div className='h-[80%] overflow-auto'>
         {
-          authData.employees.map((elem,index)=>{
+          userData.employees.map((elem,index)=>{
             return (
                <div key={index} className='  border-2  py-2 mb-2 px-4 flex justify-between rounded'>
                <h2 className='w-1/5 text-center ' >{elem.firstName} </h2>
