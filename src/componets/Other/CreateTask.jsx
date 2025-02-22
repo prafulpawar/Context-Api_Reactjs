@@ -4,7 +4,7 @@ import { AuthContext } from '../../context/AuthProvider';
 
 function CreateTask({ data }) {
 
-   const[userData,setUserData] = useContext(AuthContext)
+  const [userData, setUserData] = useContext(AuthContext)
 
   const [tasktitle, setTaskTitle] = useState("T");
   const [taskdescription, setTaskDescription] = useState("");
@@ -14,6 +14,8 @@ function CreateTask({ data }) {
   const [newTask, setNewTask] = useState({});
 
   // const submitHandler = (e) => {
+
+
   //   e.preventDefault();
 
   //    setNewTask ( {
@@ -27,10 +29,10 @@ function CreateTask({ data }) {
   //     completed: false
   //   })
 
-  
-   
+
+
   //   const data = userData
-   
+
   //   data.forEach((elem) => {
   //     if (asignTo === elem.firstName) {
   //       elem.tasks.push(newTask);
@@ -41,7 +43,7 @@ function CreateTask({ data }) {
   //   setUserData(data)
   //    console.log(data)
 
-  
+
   //   // Reset form fields properly
   //   setAsignTo("");
   //   setCategory("");
@@ -49,12 +51,52 @@ function CreateTask({ data }) {
   //   setTaskDescription("");
   //   setTaskTitle("");
   // };
-  
-  const submitHandler = (e) => {
+
+  //   const submitHandler = (e) => {
+  //     e.preventDefault();
+
+  //     // Create a new task object
+  //     const task = {
+  //       taskdate,
+  //       taskdescription,
+  //       tasktitle,
+  //       category,
+  //       active: false,
+  //       new: true,
+  //       failed: false,
+  //       completed: false
+  //     };
+
+  //     // Update state in a functional way
+  //     setNewTask(task); // No need to use `newTask` immediately
+
+  //     setUserData(prevUserData => {
+  //       return prevUserData.map(user => {
+  //         if (user.firstName === asignTo) {
+  //           return {
+  //             ...user,
+  //             tasks: [...user.tasks, task], // Properly update tasks
+  //             taskCounts: { ...user.taskCounts, new: user.taskCounts.new + 1 }
+  //           };
+  //         }
+  //         return user;
+  //       });
+  //     });
+  //     console.log(userData)
+  //     // Reset form fields properly
+  //     setAsignTo("");
+  //     setCategory("");
+  //     setTaskDate("");
+  //     setTaskDescription("");
+  //     setTaskTitle("");
+  // };
+
+
+  const handleLogin = (e) => {
     e.preventDefault();
 
-    // Create a new task object
-    const task = {
+    // Task object create karo
+    const newTask = {
       taskdate,
       taskdescription,
       tasktitle,
@@ -65,30 +107,32 @@ function CreateTask({ data }) {
       completed: false
     };
 
-    // Update state in a functional way
-    setNewTask(task); // No need to use `newTask` immediately
-
-    setUserData(prevUserData => {
-      return prevUserData.map(user => {
-        if (user.firstName === asignTo) {
-          return {
-            ...user,
-            tasks: [...user.tasks, task], // Properly update tasks
-            taskCounts: { ...user.taskCounts, new: user.taskCounts.new + 1 }
-          };
-        }
-        return user;
-      });
+    // `userData` ka naya copy banao taake direct mutation na ho
+    const updatedUserData = userData.map(user => {
+      if (user.firstName === asignTo) {
+        return {
+          ...user,
+          tasks: [...user.tasks, newTask], // Properly tasks ko update karo
+          taskCounts: {
+            ...user.taskCounts,
+            newTasks: (user.taskCounts.newTasks || 0) + 1
+          }
+        };
+      }
+      return user;
     });
 
-    // Reset form fields properly
+    // Updated state ko set karo
+    setUserData(updatedUserData);
+    console.log("Updated User Data:", updatedUserData);
+
+    // Reset form fields
     setAsignTo("");
     setCategory("");
     setTaskDate("");
     setTaskDescription("");
     setTaskTitle("");
-};
-
+  };
 
   return (
     <div className="p-5 bg-[#1c1c1c] mt-7 rounded">
