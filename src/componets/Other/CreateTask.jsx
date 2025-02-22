@@ -13,10 +13,48 @@ function CreateTask({ data }) {
   const [category, setCategory] = useState("");
   const [newTask, setNewTask] = useState({});
 
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+
+  //    setNewTask ( {
+  //     taskdate,
+  //     taskdescription,
+  //     tasktitle,
+  //     category,
+  //     active: false,
+  //     new: true,
+  //     failed: false,
+  //     completed: false
+  //   })
+
+  
+   
+  //   const data = userData
+   
+  //   data.forEach((elem) => {
+  //     if (asignTo === elem.firstName) {
+  //       elem.tasks.push(newTask);
+  //       elem.taskCounts.new = elem.taskCounts.newTasks+1
+  //     }
+  //   });
+
+  //   setUserData(data)
+  //    console.log(data)
+
+  
+  //   // Reset form fields properly
+  //   setAsignTo("");
+  //   setCategory("");
+  //   setTaskDate("");
+  //   setTaskDescription("");
+  //   setTaskTitle("");
+  // };
+  
   const submitHandler = (e) => {
     e.preventDefault();
 
-     setNewTask ( {
+    // Create a new task object
+    const task = {
       taskdate,
       taskdescription,
       tasktitle,
@@ -25,30 +63,32 @@ function CreateTask({ data }) {
       new: true,
       failed: false,
       completed: false
-    })
+    };
 
-  
-   
-    const data = userData
-   
-    data.forEach((elem) => {
-      if (asignTo === elem.firstName) {
-        elem.tasks.push(newTask);
-        elem.taskCounts.new = elem.taskCounts.newTasks+1
-      }
+    // Update state in a functional way
+    setNewTask(task); // No need to use `newTask` immediately
+
+    setUserData(prevUserData => {
+      return prevUserData.map(user => {
+        if (user.firstName === asignTo) {
+          return {
+            ...user,
+            tasks: [...user.tasks, task], // Properly update tasks
+            taskCounts: { ...user.taskCounts, new: user.taskCounts.new + 1 }
+          };
+        }
+        return user;
+      });
     });
 
-    setUserData(data)
-     console.log(data)
-
-  
     // Reset form fields properly
     setAsignTo("");
     setCategory("");
     setTaskDate("");
     setTaskDescription("");
     setTaskTitle("");
-  };
+};
+
 
   return (
     <div className="p-5 bg-[#1c1c1c] mt-7 rounded">
