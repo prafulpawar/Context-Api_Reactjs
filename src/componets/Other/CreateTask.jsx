@@ -12,7 +12,7 @@ function CreateTask({ data }) {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const taskObj = {
+     setNewTask ( {
       taskdate,
       taskdescription,
       tasktitle,
@@ -21,20 +21,20 @@ function CreateTask({ data }) {
       new: true,
       failed: false,
       completed: false
-    };
+    })
 
-    setNewTask(taskObj);
+  
 
-    const employees = JSON.parse(localStorage.getItem('employees')) || [];
+    const data = JSON.parse(localStorage.getItem('employees')) || [];
 
-    employees.forEach((elem) => {
+    data.forEach((elem) => {
       if (asignTo === elem.firstName) {
-        elem.tasks.push(taskObj);
+        elem.tasks.push(newTask);
       }
     });
    // set into localStorage
-    localStorage.setItem('employees', JSON.stringify(employees));
-
+    localStorage.setItem('employees', JSON.stringify(data));
+    console.log(data)
     // Reset form fields properly
     setAsignTo("");
     setCategory("");
